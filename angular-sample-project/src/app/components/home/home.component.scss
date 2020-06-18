@@ -9,5 +9,10 @@
 
   .card-body {
     height: 200px;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }
 }
