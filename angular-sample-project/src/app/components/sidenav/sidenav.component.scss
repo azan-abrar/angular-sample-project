@@ -6,9 +6,16 @@
   width: 250px;
   background: #222;
   font-size: 14px;
+  transition: all 0.3s ease;
 
   i {
     width: 20px;
     font-size: 100%;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .sidebar {
+    left: -250px;
   }
 }

@@ -31,10 +31,12 @@
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/font-awesome.min.css",
+              "src/assets/css/all.scss",
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/custom.js",
             ]
           },
           "configurations": {
