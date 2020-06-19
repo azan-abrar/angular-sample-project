@@ -9,3 +9,30 @@
 .navbar-brand {
   width: 250px;
 }
+
+@media only screen and (max-width: 991px) {
+  .sidebar-button {
+    position: absolute;
+    left: 270px;
+    top: 10px;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-light .navbar-toggler {
+    margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-brand {
+    width: 175px;
+    font-size: 1rem;
+  }
+
+  .sidebar-button {
+    left: 185px;
+  }
+}
