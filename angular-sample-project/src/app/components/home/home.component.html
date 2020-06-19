@@ -8,87 +8,17 @@
   </div>
   <div class="clearfix text-center categroies-block">
     <div class="row">
-      <div class="col-md-4 mb-3">
+      <div *ngFor="let category of categories" class="col-md-4 mb-3">
         <div class="card">
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1"></label>
+            <input type="checkbox" [(ngModel)]="category.isChecked" (change)="FieldsChange($event, category)" name="checkbox_{{ category.id }}" class="custom-control-input" id="checkbox_{{ category.id }}" >
+            <label class="custom-control-label" for="checkbox_{{ category.id }}"></label>
           </div>
           <div class="card-body">
             <img src="assets/images/download.png" class="img-fluid">
           </div>
           <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck2">
-            <label class="custom-control-label" for="customCheck2"></label>
-          </div>
-          <div class="card-body">
-            <img src="assets/images/download.png" class="img-fluid">
-          </div>
-          <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck3">
-            <label class="custom-control-label" for="customCheck3"></label>
-          </div>
-          <div class="card-body">
-            <img src="assets/images/download.png" class="img-fluid">
-          </div>
-          <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck4">
-            <label class="custom-control-label" for="customCheck4"></label>
-          </div>
-          <div class="card-body">
-            <img src="assets/images/download.png" class="img-fluid">
-          </div>
-          <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck5">
-            <label class="custom-control-label" for="customCheck5"></label>
-          </div>
-          <div class="card-body">
-            <img src="assets/images/download.png" class="img-fluid">
-          </div>
-          <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck6">
-            <label class="custom-control-label" for="customCheck6"></label>
-          </div>
-          <div class="card-body">
-            <img src="assets/images/download.png" class="img-fluid">
-          </div>
-          <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
+            <p class="m-0">{{category.name}}</p>
           </div>
         </div>
       </div>
@@ -96,7 +26,7 @@
     <hr>
     <h4 class="mb-4 mt-3 text-left">Selected Categories</h4>
     <div class="row">
-      <div class="col-md-4 mb-3">
+      <div *ngFor="let category of categories" class="col-md-4 mb-3">
         <div class="card">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" checked="checked" id="customCheck7" disabled="">
@@ -106,77 +36,7 @@
             <img src="assets/images/download.png" class="img-fluid">
           </div>
           <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" checked="checked" id="customCheck8" disabled="">
-            <label class="custom-control-label" for="customCheck8"></label>
-          </div>
-          <div class="card-body">
-            <img src="assets/images/download.png" class="img-fluid">
-          </div>
-          <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" checked="checked" id="customCheck9" disabled="">
-            <label class="custom-control-label" for="customCheck9"></label>
-          </div>
-          <div class="card-body">
-            <img src="assets/images/download.png" class="img-fluid">
-          </div>
-          <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" checked="checked" id="customCheck10" disabled="">
-            <label class="custom-control-label" for="customCheck10"></label>
-          </div>
-          <div class="card-body">
-            <img src="assets/images/download.png" class="img-fluid">
-          </div>
-          <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" checked="checked" id="customCheck11" disabled="">
-            <label class="custom-control-label" for="customCheck11"></label>
-          </div>
-          <div class="card-body">
-            <img src="assets/images/download.png" class="img-fluid">
-          </div>
-          <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" checked="checked" id="customCheck12" disabled="">
-            <label class="custom-control-label" for="customCheck12"></label>
-          </div>
-          <div class="card-body">
-            <img src="assets/images/download.png" class="img-fluid">
-          </div>
-          <div class="card-footer bg-primary text-white">
-            <p class="m-0">Health & Beauty</p>
+            <p class="m-0">{{category.name}}</p>
           </div>
         </div>
       </div>

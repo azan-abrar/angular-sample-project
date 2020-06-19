@@ -12,11 +12,8 @@ import { Component } from '@angular/core';
         <!-- Sidenav -->
         <app-sidenav></app-sidenav>
 
-        <!-- Home page -->
-        <app-home></app-home>
-
         <!-- routes will be rendered here -->
-        <router-outlet></router-outlet>
+        <router-outlet></router-outlet> 
       </div>
 
       <!-- footer -->
