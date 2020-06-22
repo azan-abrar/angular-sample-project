@@ -1,0 +1,101 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.navbar-brand {
+  width: 250px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 62px;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  background: #222;
+  font-size: 14px;
+  transition: all 0.3s ease;
+
+  i {
+    width: 20px;
+    font-size: 100%;
+  }
+}
+
+.categroies-block {
+  .card {
+    .custom-checkbox {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+  }
+
+  .card-body {
+    height: 200px;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+.content-wrapper {
+  padding-left: 250px;
+  padding-top: 62px;
+  transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 1023px) {
+  .content-wrapper {
+    padding-left: 0;
+  }
+
+  .collapse-menu {
+    .content-wrapper {
+      padding-left: 250px;
+    }
+
+    .sidebar {
+      left: 0 !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .sidebar {
+    left: -250px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .sidebar-button {
+    position: absolute;
+    left: 270px;
+    top: 10px;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-light .navbar-toggler {
+    margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-brand {
+    width: 175px;
+    font-size: 1rem;
+  }
+
+  .sidebar-button {
+    left: 185px;
+  }
+}

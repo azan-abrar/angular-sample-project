@@ -1,38 +1,36 @@
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
+.public-header {
+  border-bottom: 3px solid blue;
 
-.navbar-brand {
-  width: 250px;
-}
-
-@media only screen and (max-width: 991px) {
-  .sidebar-button {
-    position: absolute;
-    left: 270px;
-    top: 10px;
+  .custom-collapse {
+    justify-content: space-between;
   }
 
-  .navbar-collapse {
-    text-align: center;
-  }
+  .navbar-nav {
+    li {
+      &.active {
+        a:after {
+          content: '';
+          position: absolute;
+          top: -24px;
+          right: 8px;
+          left: 8px;
+          height: 5px;
+          background: blue;
+        }
+      }
+      a {
+        position: relative;
 
-  .navbar-light .navbar-toggler {
-    margin-right: 15px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .navbar-brand {
-    width: 175px;
-    font-size: 1rem;
-  }
-
-  .sidebar-button {
-    left: 185px;
+        &:hover:after {
+          content: '';
+          position: absolute;
+          top: -24px;
+          right: 8px;
+          left: 8px;
+          height: 5px;
+          background: blue;
+        }
+      }
+    }
   }
 }

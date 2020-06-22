@@ -8,7 +8,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+import { BannerComponent } from './components/banner/banner.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    SidenavComponent
+    SidenavComponent,
+    BannerComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,

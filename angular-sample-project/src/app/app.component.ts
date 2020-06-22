@@ -2,24 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <div id="wrapper">
-      <!-- header -->
-      <app-header></app-header>
-
-      <div class="content-wrapper">
-
-        <!-- Sidenav -->
-        <app-sidenav></app-sidenav>
-
-        <!-- routes will be rendered here -->
-        <router-outlet></router-outlet> 
-      </div>
-
-      <!-- footer -->
-      <app-footer></app-footer>
-    </div>
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
