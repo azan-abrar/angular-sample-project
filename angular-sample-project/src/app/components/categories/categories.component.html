@@ -60,29 +60,53 @@
               <img src="assets/images/download.png" class="img-fluid">
             </div>
             <div class="card-footer bg-primary text-white">
-              <p class="m-0">{{category.name}}</p>
+              <p class="m-0">{{category.title}}</p>
             </div>
           </div>
         </div>
       </div>
       <hr>
       <h4 class="mb-4 mt-3 text-left">Selected Categories</h4>
-      <div class="row">
-        <div *ngFor="let category of categories" class="col-md-4 mb-3">
-          <div class="card">
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" checked="checked" id="customCheck7" disabled="">
-              <label class="custom-control-label" for="customCheck7"></label>
-            </div>
-            <div class="card-body">
-              <img src="assets/images/download.png" class="img-fluid">
-            </div>
-            <div class="card-footer bg-primary text-white">
-              <p class="m-0">{{category.name}}</p>
+      <div *ngIf = "selected_categories.length > 0; else elseBlock">
+        <div class="row">
+          <div *ngFor="let category of selected_categories" class="col-md-4 mb-3">
+            <div class="card">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" checked="checked" id="customCheck7" disabled="">
+                <label class="custom-control-label" for="customCheck7"></label>
+              </div>
+              <div class="card-body">
+                <img src="assets/images/download.png" class="img-fluid">
+              </div>
+              <div class="card-footer bg-primary text-white">
+                <p class="m-0">{{category.title}}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <ng-template #elseBlock>
+        There is no category selected.
+      </ng-template>
+      <hr>
+      <h4 class="mb-4 mt-3 text-left">Sub Categories</h4>
+      <div *ngIf = "sub_categories.length > 0; else subCategoryBlock">
+        <div class="row">
+          <div *ngFor="let category of sub_categories" class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <img src="assets/images/download.png" class="img-fluid">
+              </div>
+              <div class="card-footer bg-primary text-white">
+                <p class="m-0">{{category.title}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #subCategoryBlock>
+        There is no sub category.
+      </ng-template>
     </div>
   </div>
 </div>
