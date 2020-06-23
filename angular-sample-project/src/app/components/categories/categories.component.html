@@ -46,25 +46,30 @@
     </div>
     <div class="d-flex mb-4">
       <h4>Select your Categories</h4>
-      <button type="button" class="btn btn-danger ml-auto">Done</button>
+      <button type="button" class="btn btn-danger ml-auto" (click)='onClictEvent()' *ngIf = "categories.length > 0">Done</button>
     </div>
     <div class="clearfix text-center categroies-block">
-      <div class="row">
-        <div *ngFor="let category of categories" class="col-md-4 mb-3">
-          <div class="card">
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" [(ngModel)]="category.isChecked" (change)="FieldsChange($event, category)" name="checkbox_{{ category.id }}" class="custom-control-input" id="checkbox_{{ category.id }}" >
-              <label class="custom-control-label" for="checkbox_{{ category.id }}"></label>
-            </div>
-            <div class="card-body">
-              <img src="assets/images/download.png" class="img-fluid">
-            </div>
-            <div class="card-footer bg-primary text-white">
-              <p class="m-0">{{category.title}}</p>
+      <div *ngIf = "categories.length > 0; else categoryBlock">
+        <div class="row">
+          <div *ngFor="let category of categories" class="col-md-4 mb-3">
+            <div class="card">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" [(ngModel)]="category.isChecked" (change)="FieldsChange($event, category)" name="checkbox_{{ category.id }}" class="custom-control-input" id="checkbox_{{ category.id }}" >
+                <label class="custom-control-label" for="checkbox_{{ category.id }}"></label>
+              </div>
+              <div class="card-body">
+                <img src="assets/images/download.png" class="img-fluid">
+              </div>
+              <div class="card-footer bg-primary text-white">
+                <p class="m-0">{{category.attributes.title}}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <ng-template #categoryBlock>
+        There is no categories.
+      </ng-template>
       <hr>
       <h4 class="mb-4 mt-3 text-left">Selected Categories</h4>
       <div *ngIf = "selected_categories.length > 0; else elseBlock">
@@ -79,7 +84,7 @@
                 <img src="assets/images/download.png" class="img-fluid">
               </div>
               <div class="card-footer bg-primary text-white">
-                <p class="m-0">{{category.title}}</p>
+                <p class="m-0">{{category.attributes.title}}</p>
               </div>
             </div>
           </div>
@@ -98,7 +103,7 @@
                 <img src="assets/images/download.png" class="img-fluid">
               </div>
               <div class="card-footer bg-primary text-white">
-                <p class="m-0">{{category.title}}</p>
+                <p class="m-0">{{category.attributes.title}}</p>
               </div>
             </div>
           </div>

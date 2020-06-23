@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BannerComponent } from './components/banner/banner.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     SidenavComponent,
     BannerComponent,
-    SliderComponent
+    SliderComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

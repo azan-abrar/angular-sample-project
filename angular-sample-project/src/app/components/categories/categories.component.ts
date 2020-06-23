@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import {TestService} from './../../test.service';
+import { CommonModule } from "@angular/common";
+import { BrowserModule } from '@angular/platform-browser'
+
 
 @Component({
   selector: 'app-categories',
@@ -14,7 +17,7 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this._demoService.getCategories().subscribe(
-      data => { this.categories = data},
+      data => { this.setCategories(data) },
       err => console.error(err),
       () => console.log('done loading foods')
     );
@@ -24,17 +27,33 @@ export class CategoriesComponent implements OnInit {
   FieldsChange(event, cat: any){
     let updateCategory = this.categories.find(x => x.id == cat.id)
     let index = this.categories.indexOf(updateCategory);
-    this.categories[index].isChecked = event.currentTarget.checked
+    this.categories[index].attributes.status = event.currentTarget.checked
     this._demoService.getSubCategories(cat.id).subscribe(
-      data => { this.sub_categories = data },
+      data => { this.setSubCategories(data)  },
       err => console.error(err),
       () => console.log('done loading foods')
     );
   }
 
   onClictEvent(){
-    this.selected_categories = this.selected_categories.concat(this.categories.filter(x => x.isChecked == true))
-    this.categories = this.categories.filter(x => x.isChecked == false)
+    this.selected_categories = this.selected_categories.concat(this.categories.filter(x => x.attributes.status == true))
+    this.categories = this.categories.filter(x => x.attributes.status == false)
+  }
+
+  setCategories(categories){
+    if(categories.errors){
+      alert(categories.errors)
+    }else{
+      this.categories = categories.data
+    }
+  }
+
+  setSubCategories(sub_categories){
+    if(sub_categories.errors){
+      alert(sub_categories.errors)
+    }else{
+      this.sub_categories = sub_categories.data
+    }
   }
 
 }
